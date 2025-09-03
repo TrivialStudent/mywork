@@ -1,15 +1,19 @@
 {
-    "name": "Lorcan Purcell",
-    "age": "18",
+    "name": "Lorcan",
+    "age": 18,
     "languages": [
-        [
-            "portuguese",
-            "pt"
-        ],
         [
             "japanese",
             "ja"
+        ],
+        [
+            "chinese",
+            "zh-CN"
+        ],
+        [
+            "spanish",
+            "es"
         ]
     ],
-    "phrase": "I love advanced cs, and I hope kevin likes my project"
-}
+    "phrase": "I love advanced CS",
+    "translations": 

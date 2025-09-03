@@ -29,7 +29,7 @@ class Kevin_Santos_IO(App):
         }
         check = []
         for label, ok in caps.items():
-            check.append(f"{'✅' if ok else '❌'} {label}")
+            check.append(f"{'ELIGIBLE' if ok else 'VOID----'} {label}")
         return "\n".join(check)
     def compose(self) -> ComposeResult:
         yield Header()
@@ -162,16 +162,16 @@ class Kevin_Santos_IO(App):
             checkbox_box.query_one("#checkboxLabel").add_class("hidden")
 
             # Translate
-            translations = []
+            self.translations = []
             for lang_name, lang_code in self.languages:
                 if lang_name in selected_langs:
                     translated = await self.translate(self.targetTranslation, lang_code)
-                    translations.append(f"{lang_name.capitalize()} ({lang_code}): {translated}")
+                    self.translations.append(f"{lang_name.capitalize()} ({lang_code}): {translated}")
 
             output_label.update(
-                "Translations:\n" + "\n".join(translations) if translations else "No translations performed."
+                "Translations:\n" + "\n".join(self.translations) if self.translations else "No translations performed."
             )
-            print(f"Translations output: {translations}")  # Debug log
+            print(f"Translations output: {self.translations}")  # Debug log
 
             # Clear
             for widget in checkbox_box.query(Checkbox):
@@ -192,6 +192,7 @@ class Kevin_Santos_IO(App):
                 "age": self.user_age,
                 "languages": self.languages,
                 "phrase": self.targetTranslation,
+                "translations": self.translations,
             }
             with open("data.json", "w") as file:
                 json.dump(data, file, indent=4)
