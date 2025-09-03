@@ -24,6 +24,8 @@
     align-horizontal: center;
     align-vertical: middle;
     background: $panel;
+    text-wrap: wrap;
+    overflow: auto;
 }
 
 #checkboxBox {
@@ -49,7 +51,7 @@
     text-style: bold;
 }
 
-#new_phrase_button {
+#JSON_button {
     width: 50;
     margin: 1 0 0 0;
     text-style: bold;
