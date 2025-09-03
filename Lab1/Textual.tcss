@@ -1,0 +1,87 @@
+#main_container {
+    layout: horizontal;
+    width: 100%;
+    height: 100%;
+}
+
+#welcomeBox {
+    width: 50%;
+    height: 100%;
+    padding: 2;
+    border: round $accent;
+    layout: vertical;
+    align-horizontal: center;
+    align-vertical: middle;
+    background: $boost;
+}
+
+#outputBox {
+    width: 50%;
+    height: 100%;
+    padding: 2;
+    border: round $accent;
+    layout: vertical;
+    align-horizontal: center;
+    align-vertical: middle;
+    background: $panel;
+}
+
+#checkboxBox {
+    width: 50%;
+    height: 100%;
+    padding: 2;
+    border: round $accent;
+    layout: vertical;
+    align-horizontal: center;
+    align-vertical: middle;
+    background: $boost;
+}
+
+#outputLabel {
+    text-style: bold;
+    content-align: center middle;
+    text-wrap: wrap;
+}
+
+#quit_button {
+    width: 50;
+    margin: 1 0 0 0;
+    text-style: bold;
+}
+
+#new_phrase_button {
+    width: 50;
+    margin: 1 0 0 0;
+    text-style: bold;
+}
+#nameInput {
+    width: 50;
+    margin: 1 0;
+}
+
+#submit_button {
+    width: 50;
+    margin: 1 0 0 0;
+    text-style: bold;
+}
+
+#checkboxLabel {
+    text-style: bold;
+    content-align: center middle;
+    margin: 1 0;
+}
+
+Checkbox {
+    width: 50;
+    margin: 1 0;
+}
+
+#translate_button {
+    width: 50;
+    margin: 1 0 0 0;
+    text-style: bold;
+}
+
+.hidden {
+    display: none;
+}
