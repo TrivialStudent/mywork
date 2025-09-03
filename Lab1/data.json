@@ -1,11 +1,15 @@
 {
-    "name": "Lorcan",
-    "age": "1",
+    "name": "Lorcan Purcell",
+    "age": "18",
     "languages": [
+        [
+            "portuguese",
+            "pt"
+        ],
         [
             "japanese",
             "ja"
         ]
     ],
-    "phrase": "I love Japanese"
+    "phrase": "I love advanced cs, and I hope kevin likes my project"
 }

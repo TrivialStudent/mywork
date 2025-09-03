@@ -21,8 +21,7 @@
     padding: 2;
     border: round $accent;
     layout: vertical;
-    align-horizontal: center;
-    align-vertical: middle;
+    align: center middle;
     background: $panel;
     text-wrap: wrap;
     overflow: auto;
@@ -43,6 +42,11 @@
     text-style: bold;
     content-align: center middle;
     text-wrap: wrap;
+    width: 90%;
+    padding: 1;
+    color: $text; /* Matches nord theme text color */
+    background: $surface; /* Subtle background for readability */
+    border: round $secondary; /* Subtle border for nord theme */
 }
 
 #quit_button {
@@ -56,6 +60,7 @@
     margin: 1 0 0 0;
     text-style: bold;
 }
+
 #nameInput {
     width: 50;
     margin: 1 0;

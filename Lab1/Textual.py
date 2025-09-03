@@ -7,13 +7,9 @@ from textual.containers import Container
 from textual.validation import Number
 from textual.widgets import Footer, ProgressBar
 
-# Global variable to store the phrase to translate
-targetTranslation = ""
-
 class Kevin_Santos_IO(App):
     BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
     CSS_PATH = "Textual.tcss"
-
 
     def __init__(self):
         super().__init__()
@@ -21,7 +17,20 @@ class Kevin_Santos_IO(App):
         self.user_name = ""
         self.user_age = ""
         self.languages = []
+        self.theme = "nord"
 
+    def age_capabilities(self, age: int) -> str:
+        caps = {
+            "Drive (typical US)": age >= 16,
+            "Vote (US)": age >= 18,
+            "Drink (US)": age >= 21,
+            "Rent a car easily (US)": age >= 25,
+            "Run for President (US)": age >= 35,
+        }
+        check = []
+        for label, ok in caps.items():
+            check.append(f"{'✅' if ok else '❌'} {label}")
+        return "\n".join(check)
     def compose(self) -> ComposeResult:
         yield Header()
         yield Footer()
@@ -64,10 +73,12 @@ class Kevin_Santos_IO(App):
             self.step = "age"
 
         elif event.button.id == "submit_button" and self.step == "age":
+            name_input = self.query_one("#nameInput")
             self.user_age = self.query_one("#nameInput").value.strip()
             if not self.user_age.isdigit():
                 output_label.update("Please enter a valid age (integers only).")
                 return
+            self.user_age = int(self.user_age)
             def age_rules(x) -> str:
                 age = int(x)
                 if age <= 13:
@@ -80,8 +91,13 @@ class Kevin_Santos_IO(App):
                     return "you can do anything. Enjoy your life"
                 elif age > 60:
                     return "you are getting old!"
-            output_label.update(f" At {self.user_age} {age_rules(self.user_age)}. \n Now list up to 5 languages wish to learn")
-            name_input = self.query_one("#nameInput")
+            age_info = [
+                f"- Age: {self.user_age}",
+                f"- Rule: {age_rules(self.user_age)}",
+                f"- Capabilities:",
+                *(f"  - {cap}" for cap in self.age_capabilities(self.user_age).split("\n"))
+            ]
+            output_label.update("\n".join(age_info) + "\n\nNow list up to 5 languages wish to learn")
             name_input.clear()
             name_input.placeholder = "e.g. Spanish,Japanese"
             name_input.validators = []
@@ -97,7 +113,6 @@ class Kevin_Santos_IO(App):
                 output_label.update("Please enter up to 5 languages only.")
                 return
 
-            # Map language names to deep-translator language codes
             lang_map = {
                 "english": "en", "spanish": "es", "french": "fr", "chinese": "zh-CN",
                 "german": "de", "japanese": "ja", "russian": "ru", "italian": "it", "vietnamese": "vi",
@@ -163,7 +178,6 @@ class Kevin_Santos_IO(App):
                 widget.remove()
             checkbox_box.query_one("#translate_button").remove()
 
-            # Add Quit and New Phrase buttons
             checkbox_box.mount(Button("Quit", id="quit_button"))
             checkbox_box.mount(Button("Save to JSON", id="JSON_button"))
             self.step = "post_translation"
