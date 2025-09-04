@@ -1,19 +1,23 @@
 {
-    "name": "Lorcan",
-    "age": 18,
+    "name": "Kevin Santos",
+    "age": 30,
     "languages": [
         [
-            "japanese",
-            "ja"
-        ],
-        [
-            "chinese",
-            "zh-CN"
+            "portuguese",
+            "pt"
         ],
         [
             "spanish",
             "es"
+        ],
+        [
+            "english",
+            "en"
         ]
     ],
-    "phrase": "I love advanced CS",
-    "translations": 
+    "phrase": "Computer Science is awesome!",
+    "translations": [
+        "Portuguese (pt): A ci\u00eancia da computa\u00e7\u00e3o \u00e9 incr\u00edvel!",
+        "Spanish (es): \u00a1La inform\u00e1tica es incre\u00edble!"
+    ]
+}
