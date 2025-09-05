@@ -44,9 +44,10 @@
     text-wrap: wrap;
     width: 90%;
     padding: 1;
-    color: $text; /* Matches nord theme text color */
-    background: $surface; /* Subtle background for readability */
-    border: round $secondary; /* Subtle border for nord theme */
+    color: $text;
+    background: $surface;
+    border: round $secondary;
+    margin: 1 0; /* Add spacing below list */
 }
 
 #quit_button {
@@ -87,6 +88,23 @@ Checkbox {
     width: 50;
     margin: 1 0 0 0;
     text-style: bold;
+}
+
+#ageList {
+    width: 90%;
+    max-height: 50%; /* Increased for better visibility */
+    background: $surface;
+    border: round $secondary;
+    padding: 1;
+}
+
+#ageList ListItem {
+    padding: 0 1;
+    color: $text;
+}
+
+#ageList ListItem:hover {
+    background: $boost 20%; /* Subtle highlight */
 }
 
 .hidden {
