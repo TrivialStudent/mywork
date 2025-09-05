@@ -1,27 +1,24 @@
 import random
 def load_quotes(filename):
-    file = open(filename)
-    quotes = file.readlines()
-    file.close()
-    return quotes
+    try:
+        with open(filename) as quotes:
+            file = quotes.readlines()
+        return file
+    except FileNotFoundError: print("File not found")
 
 def get_random_quote(quotes):
-    random_quote = random.choice(quotes)
-    return random_quote
+    return random.choice(quotes) if quotes else "ERROR: NO QUOTES"
 
 def add_to_favorites(random_quote):
-    file = open("favorites.txt", 'a')
-    file.write(random_quote)
-    file.close()
+    try:
+        with open("favorites.txt", 'a') as file:
+            file.write(random_quote)
+    except FileNotFoundError: print("File not found")
 def view_favorites():
-    file = open('favorites.txt')
-    favorites = file.readlines()
-    file.close()
-    new_favorites = []
-    for f in favorites:
-        new = f.strip()
-        new_favorites.append(new)
-    return new_favorites
+    try:
+        with open('favorites.txt') as file:
+            return [f.strip() for f in file.readlines()]
+    except FileNotFoundError: print("File not found")
 
 if __name__ == "__main__":
     some_quote = get_random_quote(load_quotes("quotes.txt"))
