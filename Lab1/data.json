@@ -1,0 +1,24 @@
+{
+    "name": "Lorcan Purcell",
+    "age": 18,
+    "languages": [
+        [
+            "russian",
+            "ru"
+        ],
+        [
+            "chinese",
+            "zh-CN"
+        ],
+        [
+            "french",
+            "fr"
+        ]
+    ],
+    "phrase": "I love Alan Galym",
+    "translations": [
+        "Russian (ru): \u042f \u043b\u044e\u0431\u043b\u044e \u0410\u043b\u0430\u043d \u0413\u0430\u043b\u0438\u043c",
+        "Chinese (zh-CN): \u6211\u7231\u827e\u4f26\u00b7\u76d6\u5c14\u59c6\uff08Alan Galym\uff09",
+        "French (fr): J'adore Alan Galym"
+    ]
+}
