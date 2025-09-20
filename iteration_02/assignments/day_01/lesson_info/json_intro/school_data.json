@@ -1,0 +1,30 @@
+{
+    "semester": "Fall 2025",
+    "school": "Northfield Academy",
+    "students": [
+        {
+            "id": 1,
+            "name": "Miguel Chavez",
+            "courses": [
+                {"code": "MATH101", "name": "Calculus I", "grade": "A"},
+                {"code": "CS102", "name": "Intro to Programming", "grade": "B+"}
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Bob Smith",
+            "courses": [
+                {"code": "ENG201", "name": "English Literature", "grade": "A-"},
+                {"code": "HIST101", "name": "World History", "grade": "B"}
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Carol Lee",
+            "courses": [
+                {"code": "BIO101", "name": "Biology I", "grade": "B+"},
+                {"code": "CHEM101", "name": "Chemistry I", "grade": "A"}
+            ]
+        }
+    ]
+}
