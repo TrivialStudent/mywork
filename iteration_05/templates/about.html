@@ -1,0 +1,29 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}About Lorcan{% endblock %}
+
+
+{% block content %}
+
+<h1> I am Lorcan</h1>
+<div> </div>
+<h3> I love to eat chicken. I am not very good at coding, but I am trying to improve. </h3>
+<div> </div>
+<h3> I don't like doing html, I prefer c++. </h3>
+<div> </div>
+<h3> As you can tell I'm not very good at web design</h3>
+
+<h2> Hobbies:</h2>
+<ul>
+{% for hobby in hobies %}
+ <li> {{ hobby  }}</li>
+    {% endfor %}
+    </ul>
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+<head>
+
+    <title> {% block title %}CONTACT ME!{% endblock %} </title>
+</head>
+
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+<h1>Welcome to my contact page!</h1>
+
+<h3>Here are some ways to reach me!</h3>
+<ul>
+{% for key, value in contact.items() %}
+ <li>{{key}} = {{value}} </li>
+    {% endfor %}
+    </ul>
+{%if not contact["email"] or not contact["github"] or not contact["phone"] %}
+<p> Error loading some contact info</p>
+
+{% else %}
+<p>No issues loading contact info</p>
+{% endif %}
+
+
+
+{% endblock %}
+</body>
+</html>

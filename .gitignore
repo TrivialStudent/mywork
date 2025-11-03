@@ -9,10 +9,8 @@ __pycache__/
 dist/
 build/
 
-# IDEs / OS
 .vscode/
 .idea/
 .DS_Store
 
-# Logs
 *.log
