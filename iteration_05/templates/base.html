@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<!-- Head tag contains metadata. Things that we don't see in the program like CSS links, Javascript imports if needed-->
+<head>
+    <!-- Title tag determines what ends up in browser tab -->
+    <!-- Since we want different pages, to have different titles, we use a jinja2 block -->
+    <!-- This means that templates which extend this one can replace the content of the title block with their own title.-->
+    <title> {% block title %}Flask UI{% endblock %} </title>
+</head>
+
+<!-- Body tag opens the main visible part of the webpage. Everything shown in the browser window lives inside here.-->
+<body>
+    <!-- Navigation bar because I want all my pages to have the ability to navigate between other routes -->
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/contact">Contact</a> |
+        <a href="/about">About</a>
+    </nav>
+    <hr> <!-- This creates a horizontal line -->
+
+    <!-- This is where child templates will insert content -->
+    {% block content %}{% endblock %}
+</body>
+</html>
