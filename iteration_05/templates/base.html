@@ -1,24 +1,78 @@
 <!DOCTYPE html>
 <html>
-<!-- Head tag contains metadata. Things that we don't see in the program like CSS links, Javascript imports if needed-->
 <head>
-    <!-- Title tag determines what ends up in browser tab -->
-    <!-- Since we want different pages, to have different titles, we use a jinja2 block -->
-    <!-- This means that templates which extend this one can replace the content of the title block with their own title.-->
-    <title> {% block title %}Flask UI{% endblock %} </title>
+    <title>{% block title %}Flask UI{% endblock %}</title>
+    <style>
+        /* Consistent Theme */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("{{ url_for('static', filename='wallpaper.png') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #222;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            background-color: purple;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #cce4ff;
+        }
+
+
+        main {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            color: white;
+
+
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-top: 1.5rem;
+            color: white;
+        }
+
+        ul {
+            list-style-type: circle;
+            padding-left: 1.5rem;
+        }
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40vh;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
-<!-- Body tag opens the main visible part of the webpage. Everything shown in the browser window lives inside here.-->
 <body>
-    <!-- Navigation bar because I want all my pages to have the ability to navigate between other routes -->
     <nav>
-        <a href="/">Home</a> |
-        <a href="/contact">Contact</a> |
+        <a href="/">Home</a>
+        <a href="/contact">Contact</a>
         <a href="/about">About</a>
     </nav>
-    <hr> <!-- This creates a horizontal line -->
 
-    <!-- This is where child templates will insert content -->
-    {% block content %}{% endblock %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 </html>
