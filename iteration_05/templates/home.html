@@ -5,37 +5,27 @@
 {% block content %}
 <style>
 
-.shadow-dance-text {
-    font-size: 4rem;
-    color: #fdf6f0;
-    text-shadow: 2px 2px 0 #ff6633, 5px 5px 0 #6cbaff;
-    animation: shadow-dance 1.5s infinite;
-    filter: drop-shadow(0 0 8px rgba(255, 102, 51, 0.3));
 
-}
 .subtitle {
-    font-size: 1.5rem;
-    color: #f0e7e2;
-    opacity: 0.9;
-    margin-top: 0;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  color: #f0e7e2;
+  opacity: 0.9;
+  margin-top: 0;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-
-
-@keyframes shadow-dance {
-    0%, 100% {
-        text-shadow: 2px 2px 0 #ff6633, 5px 5px 0 #6cbaff;
-    }
-    50% {
-        text-shadow: -2px -2px 0 #6cbaff, -5px -5px 0 #ff6633;
-    }
+.title {
+  font-size: 3rem;
+  color: #ffff;
+  letter-spacing: 1px;
 }
 
 </style>
 
-<div class="flex-center shadow-dance-container">
-    <h1 class="shadow-dance-text">Welcome</h1>
-    <h2 class="subtitle">To my flask app</h2>
+
+
+<div class="flex-center">
+  <h1 class="title">Welcome</h1>
 </div>
+
 {% endblock %}
